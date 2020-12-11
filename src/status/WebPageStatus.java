@@ -84,7 +84,7 @@ public class WebPageStatus {
     }
 
     private void responseSubstring (HttpURLConnection connection) throws IOException{
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(),"UTF-8"));
         String line;
         boolean hasSubstring = false;
 
