@@ -15,10 +15,10 @@ response.setContentType("text/html; charset=UTF-8");
     <title>URL监控</title>
 </head>
 <body>
-<h1 style="text-align: center">URL监控URL名称</h1>
+<h1 style="text-align: center">URL监控</h1>
 <br>
 <form align="center" method="get" action="${pageContext.request.contextPath}/insert_table">
-    <input type="submit" value="Add new URL">
+    <input type="submit" value="添加新URL">
 </form>
 <br>
 <table border="1" align="center">

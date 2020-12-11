@@ -63,10 +63,10 @@ response.setContentType("text/html; charset=UTF-8");
             <td>
                 <input style="text-align: center" type="text" name="response_range_min" value="<%=webPage.getResponseRangeMin()%>">
             </td>
-            <input type="submit" value="保存修改放弃修改返回监控">
+            <input type="submit" value="保存修改">
             <br>
             <br>
-            <input type="reset" value="放弃修改返回监控">
+            <input type="reset" value="放弃修改">
         </form>
     </tr>
 </table>
