@@ -19,7 +19,7 @@ public class ChangeMonitoringStateServlet extends HttpServlet {
 
         changeState(idPage, request, response);
 
-        response.sendRedirect("/monitoring");
+        response.sendRedirect("monitoring");
     }
 
     private void changeState (int idPage, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

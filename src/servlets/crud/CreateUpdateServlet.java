@@ -32,7 +32,7 @@ public class CreateUpdateServlet extends HttpServlet {
         } else
             executeSql(idPage, sqlInsert, request, response);
 
-        response.sendRedirect("/monitoring");
+        response.sendRedirect("monitoring");
     }
 
 

@@ -19,7 +19,7 @@ public class DeleteServlet extends HttpServlet {
 
         deleteById(idPage, request, response);
 
-        response.sendRedirect("/monitoring");
+        response.sendRedirect("monitoring");
     }
 
     private void deleteById (int idPage, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
