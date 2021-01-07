@@ -27,6 +27,7 @@ response.setContentType("text/html; charset=UTF-8");
         <th><b>响应时间</b></th>
         <th><b>响应代码</b></th>
         <th><b>响应匹配字符串</b></th>
+        <th><b>响应字符集</b></th>
         <th><b>最大响应时间</b></th>
         <th><b>最小响应时间</b></th>
     </tr>
@@ -54,6 +55,10 @@ response.setContentType("text/html; charset=UTF-8");
 
             <td>
                 <input style="text-align: center" type="text" name="response_substring" value="<%=webPage.getResponseSubstring()%>">
+            </td>
+
+            <td>
+                <input style="text-align: center" type="text" name="response_charset" value="<%=webPage.getResponseCharset()%>">
             </td>
 
             <td>

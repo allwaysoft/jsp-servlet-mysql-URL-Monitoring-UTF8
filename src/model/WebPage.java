@@ -14,11 +14,12 @@ public class WebPage extends TimerTask {
     private Integer responseTime;
     private Integer responseCode;
     private String responseSubstring;
+    private String responseCharset;    
     private Integer responseRangeMin;
     private Integer responseRangeMax;
 
     public WebPage(Integer id, String urlAddress, String status, String urlName, Integer monitoringPeriod, Integer responseTime,
-                   Integer responseCode, String responseSubstring, Integer responseRangeMin, Integer responseRangeMax) {
+                   Integer responseCode, String responseSubstring,String responseCharset, Integer responseRangeMin, Integer responseRangeMax) {
         this.id = id;
         this.urlAddress = urlAddress;
         this.status = status;
@@ -27,6 +28,7 @@ public class WebPage extends TimerTask {
         this.responseTime = responseTime;
         this.responseCode = responseCode;
         this.responseSubstring = responseSubstring;
+        this.responseCharset = responseCharset;        
         this.responseRangeMin = responseRangeMin;
         this.responseRangeMax = responseRangeMax;
     }
@@ -72,6 +74,9 @@ public class WebPage extends TimerTask {
 
     public String getResponseSubstring() {
         return responseSubstring;
+    }
+    public String getResponseCharset() {
+        return responseCharset;
     }
 
     public Integer getResponseRangeMin() {

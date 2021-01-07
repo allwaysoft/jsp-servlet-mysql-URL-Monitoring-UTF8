@@ -73,6 +73,7 @@ public class MonitoringServlet extends HttpServlet {
                         resultSelectAll.getInt("response_time"),
                         resultSelectAll.getInt("response_code"),
                         resultSelectAll.getString("response_substring"),
+                        resultSelectAll.getString("response_charset"),                        
                         resultSelectAll.getInt("response_range_min"),
                         resultSelectAll.getInt("response_range_max")));
                 // add timers for each URL

@@ -68,14 +68,14 @@ public class WebPageStatus {
     }
 
     private void responseRange(HttpURLConnection connection) {
-        if (connection.getContentLength() == -1)
-            warning.add("content length is not known; ");
-        else {
-            if (connection.getContentLength() > webPage.getResponseRangeMax())
-                critical.add("content length too long; ");
-            if (connection.getContentLength() < webPage.getResponseRangeMin())
-                critical.add("content length too short; ");
-        }
+//        if (connection.getContentLength() == -1)
+//            warning.add("content length is not known; ");
+//        else {
+//            if (connection.getContentLength() > webPage.getResponseRangeMax())
+//                critical.add("content length too long; ");
+//            if (connection.getContentLength() < webPage.getResponseRangeMin())
+//                critical.add("content length too short; ");
+//        }
     }
 
     private void responseCode(HttpURLConnection connection) throws IOException{
@@ -84,7 +84,7 @@ public class WebPageStatus {
     }
 
     private void responseSubstring (HttpURLConnection connection) throws IOException{
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(),"UTF-8"));
+        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(),webPage.getResponseCharset()));
         String line;
         boolean hasSubstring = false;
 

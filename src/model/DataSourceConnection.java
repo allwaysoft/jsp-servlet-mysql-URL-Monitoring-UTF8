@@ -30,7 +30,11 @@ public class DataSourceConnection {
         //System.out.println(driver); 
         //System.out.println(connectionURL); 
         //System.out.println(username); 
-        //System.out.println(password);         
+        //System.out.println(password);   
+        System.out.println("Java Version is: "+System.getProperty("java.version")); 
+        System.out.println(System.getProperty("sun.arch.data.model") + "-bit JVM");
+ 
+
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException  e) {
