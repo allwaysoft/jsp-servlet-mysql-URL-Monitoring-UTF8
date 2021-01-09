@@ -18,9 +18,9 @@ public class CreateUpdateServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String sqlUpdate = "UPDATE url_table SET url_address=?, status=?, url_name=?, monitoring_period=?, response_time=?, " +
-                "response_code=?, response_substring=?, response_charset=?,response_range_min=?, response_range_max=? WHERE id=?";
+                "response_code=?, response_substring=?, response_charset=?,connect_timeout=?, read_timeout=? WHERE id=?";
         String sqlInsert = "INSERT INTO url_table (url_address, status, url_name, monitoring_period, response_time, " +
-                "response_code, response_substring, response_charset, response_range_min, response_range_max) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "response_code, response_substring, response_charset, connect_timeout, read_timeout) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
@@ -52,8 +52,8 @@ public class CreateUpdateServlet extends HttpServlet {
             executeStatement.setInt(6, Integer.parseInt(request.getParameter("response_code")));
             executeStatement.setString(7, request.getParameter("response_substring"));
             executeStatement.setString(8, request.getParameter("response_charset"));            
-            executeStatement.setInt(9, Integer.parseInt(request.getParameter("response_range_min")));
-            executeStatement.setInt(10, Integer.parseInt(request.getParameter("response_range_max")));
+            executeStatement.setInt(9, Integer.parseInt(request.getParameter("connect_timeout")));
+            executeStatement.setInt(10, Integer.parseInt(request.getParameter("read_timeout")));
             if (idPage != -1) executeStatement.setInt(11, Integer.parseInt(request.getParameter("id")));
 
             executeStatement.executeUpdate();

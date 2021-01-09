@@ -24,8 +24,8 @@ response.setContentType("text/html; charset=UTF-8");
         <th><b>响应代码</b></th>
         <th><b>响应匹配字符串</b></th>
         <th><b>响应字符集</b></th>        
-        <th><b>最大响应时间</b></th>
-        <th><b>最小响应时间</b></th>
+        <th><b>连接超时时间</b></th>
+        <th><b>读取超时时间</b></th>
     </tr>
     <tr>
         <form method="post" action="${pageContext.request.contextPath}/update">
@@ -58,11 +58,11 @@ response.setContentType("text/html; charset=UTF-8");
             </td>            
 
             <td>
-                <input style="text-align: center" type="text" name="response_range_max" placeholder="400000">
+                <input style="text-align: center" type="text" name="connect_timeout" placeholder="60000">
             </td>
 
             <td>
-                <input style="text-align: center" type="text" name="response_range_min" placeholder="1">
+                <input style="text-align: center" type="text" name="read_timeout" placeholder="60000">
             </td>
             <input type="submit" value="保存修改">
             <br>

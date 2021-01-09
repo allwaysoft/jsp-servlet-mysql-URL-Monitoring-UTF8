@@ -27,16 +27,16 @@ CREATE TABLE IF NOT EXISTS `url_table` (
   `response_code` int NOT NULL,
   `response_substring` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `response_charset` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `response_range_min` int NOT NULL,
-  `response_range_max` int NOT NULL,
+  `connect_timeout` int NOT NULL,
+  `read_timeout` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 正在导出表  url_monitoring.url_table 的数据：~4 rows (大约)
 /*!40000 ALTER TABLE `url_table` DISABLE KEYS */;
-INSERT INTO `url_table` (`id`, `url_address`, `status`, `url_name`, `monitoring_period`, `response_time`, `response_code`, `response_substring`, `response_charset`, `response_range_min`, `response_range_max`) VALUES
-	(3, 'http://localhost:8080/WebMonitoringTool/', 'Unknown', '监控系统', 10000, 600, 200, '简单', 'UTF-8', 1, 400000),
-	(6, 'http://www.yini.org/', 'Unknown', '秘密花园', 10000, 600, 200, '秘密花园', 'GBK', 1, 400000);
+INSERT INTO `url_table` (`id`, `url_address`, `status`, `url_name`, `monitoring_period`, `response_time`, `response_code`, `response_substring`, `response_charset`, `connect_timeout`, `read_timeout`) VALUES
+	(1, 'http://localhost:8080/WebMonitoringTool/', 'Unknown', '监控系统', 10000, 600, 200, '简单', 'UTF-8', 1, 400000),
+	(2, 'http://www.yini.org/', 'Unknown', '秘密花园', 10000, 600, 200, '秘密花园', 'GBK', 1, 400000);
 /*!40000 ALTER TABLE `url_table` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -48,8 +48,8 @@ public class ReadServlet extends HttpServlet {
                         resultGetById.getInt("response_code"),
                         resultGetById.getString("response_substring"),
                         resultGetById.getString("response_charset"),                        
-                        resultGetById.getInt("response_range_min"),
-                        resultGetById.getInt("response_range_max"));
+                        resultGetById.getInt("connect_timeout"),
+                        resultGetById.getInt("read_timeout"));
             }
 
         } catch (ClassNotFoundException e) {

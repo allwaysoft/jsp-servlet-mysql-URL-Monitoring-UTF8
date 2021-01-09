@@ -15,11 +15,11 @@ public class WebPage extends TimerTask {
     private Integer responseCode;
     private String responseSubstring;
     private String responseCharset;    
-    private Integer responseRangeMin;
-    private Integer responseRangeMax;
+    private Integer connectTimeout;
+    private Integer readTimeout;
 
     public WebPage(Integer id, String urlAddress, String status, String urlName, Integer monitoringPeriod, Integer responseTime,
-                   Integer responseCode, String responseSubstring,String responseCharset, Integer responseRangeMin, Integer responseRangeMax) {
+                   Integer responseCode, String responseSubstring,String responseCharset, Integer connectTimeout, Integer readTimeout) {
         this.id = id;
         this.urlAddress = urlAddress;
         this.status = status;
@@ -29,8 +29,8 @@ public class WebPage extends TimerTask {
         this.responseCode = responseCode;
         this.responseSubstring = responseSubstring;
         this.responseCharset = responseCharset;        
-        this.responseRangeMin = responseRangeMin;
-        this.responseRangeMax = responseRangeMax;
+        this.connectTimeout = connectTimeout;
+        this.readTimeout = readTimeout;
     }
 
     // run when the timer is triggered
@@ -79,12 +79,12 @@ public class WebPage extends TimerTask {
         return responseCharset;
     }
 
-    public Integer getResponseRangeMin() {
-        return responseRangeMin;
+    public Integer getConnectTimeout() {
+        return connectTimeout;
     }
 
-    public Integer getResponseRangeMax() {
-        return responseRangeMax;
+    public Integer getReadTimeout() {
+        return readTimeout;
     }
 
 }

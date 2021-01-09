@@ -28,8 +28,8 @@ response.setContentType("text/html; charset=UTF-8");
         <th><b>响应代码</b></th>
         <th><b>响应匹配字符串</b></th>
         <th><b>响应字符集</b></th>
-        <th><b>最大响应时间</b></th>
-        <th><b>最小响应时间</b></th>
+        <th><b>连接超时时间</b></th>
+        <th><b>读取超时时间</b></th>
     </tr>
     <tr>
         <form align="center" method="post" action="${pageContext.request.contextPath}/update?id=<%=webPage.getId()%>">
@@ -60,14 +60,15 @@ response.setContentType("text/html; charset=UTF-8");
             <td>
                 <input style="text-align: center" type="text" name="response_charset" value="<%=webPage.getResponseCharset()%>">
             </td>
-
+            
             <td>
-                <input style="text-align: center" type="text" name="response_range_max" value="<%=webPage.getResponseRangeMax()%>">
+                <input style="text-align: center" type="text" name="connect_timeout" value="<%=webPage.getConnectTimeout()%>">
+            </td>
+            
+            <td>
+                <input style="text-align: center" type="text" name="read_timeout" value="<%=webPage.getReadTimeout()%>">
             </td>
 
-            <td>
-                <input style="text-align: center" type="text" name="response_range_min" value="<%=webPage.getResponseRangeMin()%>">
-            </td>
             <input type="submit" value="保存修改">
             <br>
             <br>
