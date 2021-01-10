@@ -48,21 +48,55 @@ public class MonitoringPoller {
 //			}
 //end多线程并行不等待子线程
 
-//begin多线程并行等待子线程
+////begin多线程并行等待子线程
+//
+//			System.out.println("main start");
+//
+//			ThreadGroup tg = new ThreadGroup("Parent ThreadGroup");
+//
+//			for (WebPage webPage : webPages) {
+//				if (!webPage.getStatus().equals("NOT TRACKED")) {
+//					new Thread(tg, () -> {
+//						// Insert some method call here.
+//						System.out.println("----");
+//						webPage.setStatus();
+//						System.out.println(webPage.getUrlName());
+//						System.out.println(webPage.getUrlAddress());
+//						System.out.println(webPage.getStatus());
+//					}).start();
+//					// update status manually
+//
+//				}
+//			}
+//
+//			while (tg.activeCount() > 0) {
+//				try {
+//					System.out.println("Waiting for " + tg.activeCount() + " CThreads to Complete");
+//					Thread.sleep(1000); // Main Thread or someThradObject.sleep();
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
+//			}
+//			System.out.println("main end");
+////end多线程并行等待子线程	
+
+//begin多线程并行等待子线程循环变量
 
 			System.out.println("main start");
 
 			ThreadGroup tg = new ThreadGroup("Parent ThreadGroup");
 
-			for (WebPage webPage : webPages) {
-				if (!webPage.getStatus().equals("NOT TRACKED")) {
+			for (int i = 0; i < webPages.size(); i++) {
+				if (!webPages.get(i).getStatus().equals("NOT TRACKED")) {
+					int t = i;
 					new Thread(tg, () -> {
+
 						// Insert some method call here.
 						System.out.println("----");
-						webPage.setStatus();
-						System.out.println(webPage.getUrlName());
-						System.out.println(webPage.getUrlAddress());
-						System.out.println(webPage.getStatus());
+						webPages.get(t).setStatus();
+						System.out.println(webPages.get(t).getUrlName());
+						System.out.println(webPages.get(t).getUrlAddress());
+						System.out.println(webPages.get(t).getStatus());
 					}).start();
 					// update status manually
 
@@ -78,7 +112,7 @@ public class MonitoringPoller {
 				}
 			}
 			System.out.println("main end");
-//end多线程并行等待子线程	
+//end多线程并行等待子线程			
 
 //begin单线程		
 //			for (int i = 0; i < webPages.size(); i++) {
